@@ -14,7 +14,18 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(express.json());
-app.use(cors());
+const corsOptions = {
+  origin: [
+    "https://reunion-assignment-wheat.vercel.app",
+    "https://reunion-assignment-abhishek-mauryas-projects-6a943e29.vercel.app/",
+    "http://localhost:5173",
+  ],
+  credentials: true,
+  allowedHeaders: ["Content-type", "Accept", "Authorization"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 // Routes
 app.use("/api/v1/auth", authRoutes);

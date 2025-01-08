@@ -13,7 +13,7 @@ const loginController = async (req, res, next) => {
       process.env.JWT_SECRET,
       { expiresIn: "8h" }
     );
-    res.status(200).json({ success: true, token });
+    res.status(200).json({ success: true, user, token });
   } catch (error) {
     next(error);
   }
