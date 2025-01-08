@@ -17,6 +17,7 @@ app.use(express.json());
 const corsOptions = {
   origin: [
     "https://string-ventures-assignment.vercel.app/",
+    "https://string-ventures-assignment-abhishek-mauryas-projects-6a943e29.vercel.app/",
     "http://localhost:5173",
   ],
   credentials: true,
